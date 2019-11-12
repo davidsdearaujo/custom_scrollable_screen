@@ -1,6 +1,6 @@
 # Custom Scrollable Screen
 
-Create a custom scrollable screen.
+Flutter package to create a custom scrollable screen.
 
 <img src="https://github.com/davidsdearaujo/custom_scrollable_screen/blob/master/screenshots/Screenshot_1.png?raw=true" width="50%" />
 
