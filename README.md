@@ -6,9 +6,7 @@ Flutter package to create a custom scrollable screen.
 
 ## pubspec.yaml
 ```yaml
-  custom_scrollable_screen:
-    git:
-      url: git://github.com/davidsdearaujo/custom_scrollable_screen.git
+  custom_scrollable_screen: <lastest_version>
 ```
 
 ## Import
