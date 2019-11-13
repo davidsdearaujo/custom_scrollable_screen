@@ -11,9 +11,6 @@ class MyApp extends StatelessWidget {
       title: 'Custom Scrollable Screen Example',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: CustomScrollableScreen(
-        separatorBuilder: (_, i) => Divider(height: 0),
-        itemCount: 50,
-        itemBuilder: (context, index) => ListTile(title: Text("Item $index")),
         headerHeight: 250,
         headerBuilder: (context) => Container(
           color: Colors.amber,
@@ -23,6 +20,26 @@ class MyApp extends StatelessWidget {
             style: Theme.of(context).primaryTextTheme.headline,
           ),
         ),
+        childreen: <Widget>[
+          ClipRRect(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+            child: Container(
+              height: 300,
+              color: Colors.green,
+            ),
+          ),
+          Container(
+            height: 250,
+            color: Colors.red,
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(25)),
+            child: Container(
+              height: 470,
+              color: Colors.purple,
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -1,36 +1,97 @@
-
-## Builder example
+## Simple example
 ```dart
 CustomScrollableScreen(
   headerHeight: 250,
   headerBuilder: (context) => Container(color: Colors.amber),
-  separatorBuilder: (_, i) => Divider(height: 0),
-  itemCount: 50,
-  itemBuilder: (context, index) => ListTile(title: Text("Item $index")),
+  childreen: <Widget>[
+    Container(height: 300, color: Colors.green),
+    Container(height: 250, color: Colors.red),
+    Container(height: 470, color: Colors.purple),
+  ],
 );
 ```
 
-## Childreen example
+## Circular example
 ```dart
-CustomScrollableScreen.childreen(
+CustomScrollableScreen(
   headerHeight: 250,
-  headerBuilder: (context) => Container(color: Colors.amber),
+  headerBuilder: (context) => Container(
+    color: Colors.amber,
+    alignment: Alignment.center,
+    child: Text(
+      "Custom Screen",
+      style: Theme.of(context).primaryTextTheme.headline,
+    ),
+  ),
   childreen: <Widget>[
-    Container(
-      height: 300,
-      padding: EdgeInsets.only(top: 25),
-      color: Colors.green,
+    ClipRRect(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+      child: Container(
+        height: 300,
+        color: Colors.green,
+      ),
     ),
     Container(
       height: 250,
-      padding: EdgeInsets.only(top: 25),
       color: Colors.red,
     ),
-    Container(
-      height: 470,
-      padding: EdgeInsets.only(top: 25),
-      color: Colors.purple,
+    ClipRRect(
+      borderRadius: BorderRadius.vertical(bottom: Radius.circular(25)),
+      child: Container(
+        height: 470,
+        color: Colors.purple,
+      ),
     ),
   ],
-);
+),
+```
+
+# Complete example
+```dart
+import 'package:flutter/material.dart';
+import "package:custom_scrollable_screen/custom_scrollable_screen.dart";
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Custom Scrollable Screen Example',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: CustomScrollableScreen(
+        headerHeight: 250,
+        headerBuilder: (context) => Container(
+          color: Colors.amber,
+          alignment: Alignment.center,
+          child: Text(
+            "Custom Screen",
+            style: Theme.of(context).primaryTextTheme.headline,
+          ),
+        ),
+        childreen: <Widget>[
+          ClipRRect(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+            child: Container(
+              height: 300,
+              color: Colors.green,
+            ),
+          ),
+          Container(
+            height: 250,
+            color: Colors.red,
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(25)),
+            child: Container(
+              height: 470,
+              color: Colors.purple,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 ```

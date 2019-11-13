@@ -1,6 +1,6 @@
-## [1.0.1] - 2019.11.11
+## [2.0.0] - 2019.11.13
 
-* Updated top padding of content
+* Refatoring.
 
 ## [1.0.0] - 2019.11.11
 
