@@ -79,8 +79,8 @@ class _CustomScrollableScreenState extends State<CustomScrollableScreen> {
               );
             },
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 15),
             child: ListView.separated(
               physics: widget.scrollPhysics,
               controller: scrollController,
